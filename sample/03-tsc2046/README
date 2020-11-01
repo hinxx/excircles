@@ -1,0 +1,23 @@
+README
+
+This sample will obtain pressure and location of a single touch from the
+TSC2046 (or pin compatible XPT2046) IC. Data bytes are transferred via the
+SPI interface at a maximum IC speed. Finger presence and its coordinates
+(X, Y) are reported by the event handler.
+
+NOTE: At the moment the X/Y values are not normalized to display size.
+
+SPI0 master is used.
+
+The pinout is as follows:
+
+SCLK	GPIO11
+MOSI	GPIO10
+MISO	GPIO9
+CE0		GPIO8
+IRQ		GPIO25 (unused)
+
+The sample was tested against ITDB02-2.4E GLCD + touchscreen module.
+
+XPT2046 Touchscreen Arduino Library was used for reference
+(https://github.com/PaulStoffregen/XPT2046_Touchscreen).
