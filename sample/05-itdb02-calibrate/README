@@ -1,0 +1,14 @@
+README
+
+This sample will calibrate the touchscreen on ITDB02 2.4" LCD module.
+See ILI9325D and TSC2046 device drivers for more info.
+
+Resulting calibration coefficients can be loaded by other application
+without the need to recalibrate the touchscreen everytime.
+
+Example of calibration coefficients:
+
+-1545100 112 4396 23443426 -6096 -4 65536
+
+Touchscreen calibration nethod was taken from tslib
+(https://github.com/hinxx/tslib).
