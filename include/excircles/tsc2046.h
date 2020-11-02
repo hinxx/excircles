@@ -43,9 +43,9 @@ class TSC2046Device : public CDevice
 {
 public:
 #ifndef USE_SPI_MASTER_AUX
-    TSC2046Device(CSPIMaster *_SPIMaster, unsigned _cs, unsigned _threshold = 128);
+    TSC2046Device(CSPIMaster *_SPIMaster, unsigned _cs, unsigned _threshold = 400);
 #else
-    CTSC2046Device(CSPIMasterAUX *_SPIMaster, unsigned _cs, unsigned _threshold = 128);
+    CTSC2046Device(CSPIMasterAUX *_SPIMaster, unsigned _cs, unsigned _threshold = 400);
 #endif
     ~TSC2046Device(void);
     boolean Initialize(void);
