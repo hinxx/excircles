@@ -55,7 +55,7 @@ private:
     void TSC2046EventHandler(TSC2046Event _event, unsigned _id,
                              unsigned _posX, unsigned _posY);
     static void TSC2046EventHandlerStub(TSC2046Event _event, unsigned _id,
-                                            unsigned _posX, unsigned _posY);
+                                        unsigned _posX, unsigned _posY);
 
 private:
     // do not change this order

@@ -42,14 +42,6 @@ ILI9325DDevice::ILI9325DDevice(u8 _db0, u8 _db1, u8 _db2, u8 _db3, u8 _db4, u8 _
       rs(_rs, GPIOModeOutput),
       rst(_rst, GPIOModeOutput)
 {
-//    wr.Write(HIGH);
-//    rs.Write(HIGH);
-//    rst.Write(HIGH);
-//    cs.Write(HIGH);
-
-//    for (unsigned i = 0; i < 8; i++) {
-//        db[i].Write(HIGH);
-//    }
 }
 
 ILI9325DDevice::~ILI9325DDevice(void)
