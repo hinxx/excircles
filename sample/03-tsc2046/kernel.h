@@ -52,8 +52,10 @@ public:
     TShutdownMode Run(void);
 
 private:
-    static void TSC2046EventHandler(TSC2046Event _event, unsigned _id,
-                                        unsigned _posX, unsigned _posY);
+    void TSC2046EventHandler(TSC2046Event _event, unsigned _id,
+                             unsigned _posX, unsigned _posY);
+    static void TSC2046EventHandlerStub(TSC2046Event _event, unsigned _id,
+                                            unsigned _posX, unsigned _posY);
 
 private:
     // do not change this order
@@ -72,5 +74,6 @@ private:
     CSPIMasterAUX SPIMaster;
 #endif
     TSC2046Device TSC2046;
+    static CKernel *s_pThis;
 };
 #endif

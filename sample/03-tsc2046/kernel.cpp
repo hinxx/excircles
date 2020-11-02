@@ -32,6 +32,8 @@
 
 static const char FromKernel[] = "kernel";
 
+CKernel *CKernel::s_pThis = 0;
+
 CKernel::CKernel(void)
     : Timer(&Interrupt),
       Logger(Options.GetLogLevel(), &Timer),
@@ -42,12 +44,14 @@ CKernel::CKernel(void)
 #endif
       TSC2046(&SPIMaster, TSC2064_CHIP_SELECT, TSC2064_THRESHOLD)
 {
+    s_pThis = this;
     // show we are alive
     ActLED.Blink(5);
 }
 
 CKernel::~CKernel(void)
 {
+    s_pThis = 0;
     SPIMaster = 0;
 }
 
@@ -97,7 +101,7 @@ TShutdownMode CKernel::Run(void)
     if (pTouchScreen == 0) {
         Logger.Write(FromKernel, LogPanic, "Touchscreen not found");
     }
-    pTouchScreen->RegisterEventHandler(TSC2046EventHandler);
+    pTouchScreen->RegisterEventHandler(TSC2046EventHandlerStub);
 
     Logger.Write(FromKernel, LogNotice, "Just use your touchscreen!");
 
@@ -130,5 +134,12 @@ void CKernel::TSC2046EventHandler(TSC2046Event _event, unsigned _id,
         break;
     }
 
-    CLogger::Get()->Write(FromKernel, LogNotice, message);
+    Logger.Write(FromKernel, LogNotice, message);
+}
+
+void CKernel::TSC2046EventHandlerStub(TSC2046Event _event, unsigned _id,
+                                          unsigned _posX, unsigned _posY)
+{
+    assert(s_pThis != 0);
+    s_pThis->TSC2046EventHandler(_event, _id, _posX, _posY);
 }
