@@ -36,6 +36,7 @@ TSC2046Device::TSC2046Device(CSPIMasterAUX *_SPIMaster, unsigned _cs, unsigned _
       threshold(_threshold),
       touched(FALSE)
 {
+    assert(_SPIMaster != 0);
 }
 
 TSC2046Device::~TSC2046Device(void)

@@ -52,7 +52,6 @@ CKernel::CKernel(void)
 CKernel::~CKernel(void)
 {
     s_pThis = 0;
-    SPIMaster = 0;
 }
 
 boolean CKernel::Initialize(void)
