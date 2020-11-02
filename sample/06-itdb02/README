@@ -1,0 +1,7 @@
+README
+
+This sample will load the touchscreen calibration coefficients and allow
+user to draw on screen. Tested with ITDB02 2.4" LCD module.
+
+See 05-itsb02-calibrate sample for more information on how to obtain
+the calibration coefficients.
