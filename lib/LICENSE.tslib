@@ -1,0 +1,32 @@
+Parts of the tscalibration.cpp and tscalibration.h were taken from
+tslib (https://github.com/hinxx/tslib).
+
+/*
+ *  tslib/tests/ts_calibrate_common.c
+ *
+ *  Copyright (C) 2001 Russell King.
+ *
+ * This file is placed under the GPL.  Please see the file
+ * COPYING for more details.
+ *
+ * SPDX-License-Identifier: GPL-2.0+
+ *
+ *
+ * common functions for calibration
+ */
+
+/*
+ *  tslib/plugins/linear.c
+ *
+ *  Copyright (C) 2016 Martin Kepplinger <martin.kepplinger@ginzinger.com>
+ *  Copyright (C) 2005 Alberto Mardegan <mardy@sourceforge.net>
+ *  Copyright (C) 2001 Russell King.
+ *
+ * This file is placed under the LGPL.  Please see the file
+ * COPYING for more details.
+ *
+ * SPDX-License-Identifier: LGPL-2.1
+ *
+ *
+ * Linearly scale touchscreen values
+ */
