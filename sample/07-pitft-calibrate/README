@@ -1,0 +1,13 @@
+README
+
+This sample will allow user to calibrate touchscreen on the PiTFT 2.8 module.
+
+It turns out that the calibration of the touchscreen results in inaccurate
+coordinates being calculated. As a result the area of the complete LCD is
+not being utilized.
+
+It is best to use the default coefficients for translation since the LCD and
+touchscreen both span 240 x 320 pixels. The rotation of 180 degrees needs to
+be applied to the touchscreen coordinates to make them coincide with the LCD.
+
+Tested with the capacitive PiTFT 2.8" LCD module.
