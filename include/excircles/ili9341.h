@@ -40,6 +40,7 @@ public:
 	void SetXY(unsigned _x0, unsigned _x1, unsigned _y0, unsigned _y1);
 	void Paint(unsigned _color);
 	void Clear(void);
+    void Square(unsigned _x, unsigned _y, unsigned _size, unsigned _color);
 
 private:
 #ifndef USE_SPI_MASTER_AUX

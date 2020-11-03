@@ -101,19 +101,6 @@ boolean ILI9341Device::Initialize(void)
     WriteCommand(0x29);
     CTimer::SimpleMsDelay(5);
 
-    Clear();
-
-    CTimer::SimpleMsDelay(500);
-    Paint(0xF800);
-    CTimer::SimpleMsDelay(500);
-    Paint(0x07e0);
-    CTimer::SimpleMsDelay(500);
-    Paint(0x001f);
-    CTimer::SimpleMsDelay(500);
-    Paint(0xffff);
-    CTimer::SimpleMsDelay(500);
-    Paint(0x0000);
-
     CLogger::Get()->Write(FromILI9341, LogNotice, "ILI9341 intialized!");
     return TRUE;
 }
@@ -159,7 +146,8 @@ void ILI9341Device::Paint(unsigned _color)
     SetXY(0, LCD_WIDTH-1, 0, LCD_HEIGHT-1);
     for (unsigned i = 0; i < LCD_HEIGHT; i++) {
         for (unsigned j = 0; j < LCD_WIDTH; j++) {
-            WriteData(_color);
+            WriteData((_color >> 8) & 0xFF);
+            WriteData(_color & 0xFF);
         }
     }
 }
@@ -169,7 +157,19 @@ void ILI9341Device::Clear(void)
     SetXY(0, LCD_WIDTH-1, 0, LCD_HEIGHT-1);
     for (unsigned i = 0; i < LCD_HEIGHT; i++) {
         for (unsigned j = 0; j < LCD_WIDTH; j++) {
-            WriteData(0x0000);
+            WriteData(0x00);
+            WriteData(0x00);
+        }
+    }
+}
+
+void ILI9341Device::Square(unsigned _x, unsigned _y, unsigned _size, unsigned _color)
+{
+    SetXY(_x, _x + _size-1, _y, _y + _size-1);
+    for (unsigned i = _x; i < _x + _size; i++) {
+        for (unsigned j = _y; j < _y + _size; j++) {
+            WriteData((_color >> 8) & 0xFF);
+            WriteData(_color & 0xFF);
         }
     }
 }

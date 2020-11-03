@@ -34,13 +34,11 @@
 #include <circle/logger.h>
 #include <circle/types.h>
 #include <circle/gpiopin.h>
-
 #ifndef USE_SPI_MASTER_AUX
 #include <circle/spimaster.h>
 #else
 #include <circle/spimasteraux.h>
 #endif
-
 #include <excircles/ili9341.h>
 
 enum TShutdownMode

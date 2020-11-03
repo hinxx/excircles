@@ -87,10 +87,51 @@ TShutdownMode CKernel::Run(void)
 
     Logger.Write(FromKernel, LogNotice, "ILI9341 4 wire SPI mode");
 
-    for (unsigned i = 0; i < 0xFFFF; i += 0x3F) {
-        ILI9341.Paint(i);
-        Logger.Write(FromKernel, LogNotice, "color %4X", i);
-    }
+    ILI9341.Clear();
+
+    CTimer::SimpleMsDelay(500);
+    ILI9341.Paint(0xF800);
+    CTimer::SimpleMsDelay(500);
+    ILI9341.Paint(0x07e0);
+    CTimer::SimpleMsDelay(500);
+    ILI9341.Paint(0x001f);
+    CTimer::SimpleMsDelay(500);
+    ILI9341.Paint(0xffff);
+    CTimer::SimpleMsDelay(500);
+    ILI9341.Paint(0x0000);
+
+    unsigned size = 20;
+    unsigned color = 0x0FFF;
+    unsigned x = 10;
+    unsigned y = 10;
+    Logger.Write(FromKernel, LogNotice, "square at %3d, %3d", x, y);
+    ILI9341.Square(x, y, size, color);
+    CTimer::SimpleMsDelay(1000);
+    ILI9341.Square(x, y, size, 0x0000);
+    x = 210;
+    y = 10;
+    Logger.Write(FromKernel, LogNotice, "square at %3d, %3d", x, y);
+    ILI9341.Square(x, y, size, color);
+    CTimer::SimpleMsDelay(1000);
+    ILI9341.Square(x, y, size, 0x0000);
+    x = 210;
+    y = 290;
+    Logger.Write(FromKernel, LogNotice, "square at %3d, %3d", x, y);
+    ILI9341.Square(x, y, size, color);
+    CTimer::SimpleMsDelay(1000);
+    ILI9341.Square(x, y, size, 0x0000);
+    x = 10;
+    y = 290;
+    Logger.Write(FromKernel, LogNotice, "square at %3d, %3d", x, y);
+    ILI9341.Square(x, y, size, color);
+    CTimer::SimpleMsDelay(1000);
+    ILI9341.Square(x, y, size, 0x0000);
+    x = 110;
+    y = 150;
+    Logger.Write(FromKernel, LogNotice, "square at %3d, %3d", x, y);
+    ILI9341.Square(x, y, size, color);
+    CTimer::SimpleMsDelay(1000);
+    ILI9341.Square(x, y, size, 0x0000);
 
     Logger.Write(FromKernel, LogNotice, "\nRebooting..");
 
