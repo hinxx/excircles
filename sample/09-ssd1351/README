@@ -1,0 +1,20 @@
+README
+
+This sample will initialize the SSD1351 128x128 display in 4 wire SPI mode
+and display some colors.
+
+SPI0 master is used.
+
+The pinout is as follows:
+
+D/C		GPIO24
+RES		GPIO25
+CSX		CE0# / GPIO8
+SDI		MOSI / GPIO10
+SCL		SCLK / GPIO11
+
+The sample was tested against Newheaven display NHD-1.5-128128ASC3 1.5"
+OLED LCD module.
+
+NHD-1.5-128128ASC3 Arduino Example Code was used for reference
+(https://github.com/NewhavenDisplay/NHD-1.5-128128ASC3_Example).
