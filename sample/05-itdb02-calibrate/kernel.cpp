@@ -127,7 +127,6 @@ TShutdownMode CKernel::Run(void)
     Logger.Write(FromKernel, LogNotice, "Calibrating touchscreen!");
 
     ILI9325D.Clear();
-    ILI9325D.Paint(0x0000);
 
     // 5 points
     GetSample(20, 20, 0);
@@ -148,7 +147,7 @@ TShutdownMode CKernel::Run(void)
 }
 
 void CKernel::TSC2046EventHandler(TSC2046Event _event, unsigned _id,
-                                       unsigned _posX, unsigned _posY)
+                                  unsigned _posX, unsigned _posY)
 {
     CString message;
 

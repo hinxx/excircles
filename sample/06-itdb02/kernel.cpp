@@ -126,7 +126,6 @@ TShutdownMode CKernel::Run(void)
     pTouchScreen->RegisterEventHandler(TSC2046EventHandlerStub);
 
     ILI9325D.Clear();
-    ILI9325D.Paint(0x0000);
 
     // obtained with calibration
     // no rotations, no XY swap
@@ -148,7 +147,7 @@ TShutdownMode CKernel::Run(void)
 }
 
 void CKernel::TSC2046EventHandler(TSC2046Event _event, unsigned _id,
-                                       unsigned _posX, unsigned _posY)
+                                  unsigned _posX, unsigned _posY)
 {
     CString message;
     int x, y;
