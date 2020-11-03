@@ -1,7 +1,6 @@
 //
 // kernel.h
 //
-// ILI9341 - graphical LCD 240x320, 4 wire SPI mode
 // Copyright (C) 2020  H. Kocevar <hinxx@protonmail.com>
 //
 // This program is free software: you can redistribute it and/or modify

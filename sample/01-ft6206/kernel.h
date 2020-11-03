@@ -1,7 +1,6 @@
 //
 // kernel.h
 //
-// Circle - A C++ bare metal environment for Raspberry Pi
 // Copyright (C) 2020  H. Kocevar <hinxx@protonmail.com>
 //
 // This program is free software: you can redistribute it and/or modify
